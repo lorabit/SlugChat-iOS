@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A70F9271FA401DD000D2720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9261FA401DD000D2720 /* AppDelegate.m */; };
+		4A70F92F1FA401DD000D2720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F92E1FA401DD000D2720 /* Assets.xcassets */; };
+		4A70F9321FA401DD000D2720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F9301FA401DD000D2720 /* LaunchScreen.storyboard */; };
+		4A70F9351FA401DD000D2720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9341FA401DD000D2720 /* main.m */; };
+		4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F93D1FA406FE000D2720 /* SBTool.m */; };
+		4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */; };
+		4A70F9491FA40A6B000D2720 /* ProfileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */; };
+		4A70F94B1FA41045000D2720 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F94A1FA41045000D2720 /* Media.xcassets */; };
+		4A70F94F1FABCCC5000D2720 /* SCMobile.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F94E1FABCCC5000D2720 /* SCMobile.podspec */; };
+		4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9531FABEB9E000D2720 /* SCModuleManager.m */; };
+		4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9561FABEBC8000D2720 /* SCModule.m */; };
+		4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F95A1FABECBF000D2720 /* MobileService.m */; };
+		7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4A70F9221FA401DD000D2720 /* SlugBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlugBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A70F9251FA401DD000D2720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4A70F9261FA401DD000D2720 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4A70F92E1FA401DD000D2720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A70F9311FA401DD000D2720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A70F9331FA401DD000D2720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A70F9341FA401DD000D2720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4A70F93C1FA406FE000D2720 /* SBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBTool.h; sourceTree = "<group>"; };
+		4A70F93D1FA406FE000D2720 /* SBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBTool.m; sourceTree = "<group>"; };
+		4A70F93F1FA40712000D2720 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4A70F9431FA407DF000D2720 /* AppDelegate+RootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+RootView.h"; sourceTree = "<group>"; };
+		4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+RootView.m"; sourceTree = "<group>"; };
+		4A70F9471FA40A6B000D2720 /* ProfileListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileListViewController.h; sourceTree = "<group>"; };
+		4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileListViewController.m; sourceTree = "<group>"; };
+		4A70F94A1FA41045000D2720 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		4A70F94E1FABCCC5000D2720 /* SCMobile.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SCMobile.podspec; sourceTree = "<group>"; };
+		4A70F9521FABEB9E000D2720 /* SCModuleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCModuleManager.h; sourceTree = "<group>"; };
+		4A70F9531FABEB9E000D2720 /* SCModuleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCModuleManager.m; sourceTree = "<group>"; };
+		4A70F9551FABEBC8000D2720 /* SCModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCModule.h; sourceTree = "<group>"; };
+		4A70F9561FABEBC8000D2720 /* SCModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCModule.m; sourceTree = "<group>"; };
+		4A70F9591FABECBF000D2720 /* MobileService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileService.h; sourceTree = "<group>"; };
+		4A70F95A1FABECBF000D2720 /* MobileService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileService.m; sourceTree = "<group>"; };
+		6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.release.xcconfig"; sourceTree = "<group>"; };
+		E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SlugBot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A70F91F1FA401DD000D2720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3782F504CB1BF53D8AF4AF0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */,
+				6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4A70F9191FA401DD000D2720 = {
+			isa = PBXGroup;
+			children = (
+				4A70F94E1FABCCC5000D2720 /* SCMobile.podspec */,
+				4A70F9241FA401DD000D2720 /* SlugBot */,
+				4A70F9231FA401DD000D2720 /* Products */,
+				3782F504CB1BF53D8AF4AF0F /* Pods */,
+				A15974F31C4F42C15758444A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4A70F9231FA401DD000D2720 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9221FA401DD000D2720 /* SlugBot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A70F9241FA401DD000D2720 /* SlugBot */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9501FABEB78000D2720 /* Modules */,
+				4A70F9461FA40A33000D2720 /* ViewController */,
+				4A70F93B1FA406C1000D2720 /* Util */,
+				4A70F9251FA401DD000D2720 /* AppDelegate.h */,
+				4A70F9261FA401DD000D2720 /* AppDelegate.m */,
+				4A70F92E1FA401DD000D2720 /* Assets.xcassets */,
+				4A70F9301FA401DD000D2720 /* LaunchScreen.storyboard */,
+				4A70F9331FA401DD000D2720 /* Info.plist */,
+				4A70F9341FA401DD000D2720 /* main.m */,
+				4A70F93F1FA40712000D2720 /* Header.h */,
+				4A70F94A1FA41045000D2720 /* Media.xcassets */,
+			);
+			path = SlugBot;
+			sourceTree = "<group>";
+		};
+		4A70F93B1FA406C1000D2720 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F93C1FA406FE000D2720 /* SBTool.h */,
+				4A70F93D1FA406FE000D2720 /* SBTool.m */,
+				4A70F9431FA407DF000D2720 /* AppDelegate+RootView.h */,
+				4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4A70F9461FA40A33000D2720 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9471FA40A6B000D2720 /* ProfileListViewController.h */,
+				4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4A70F9501FABEB78000D2720 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9581FABEC79000D2720 /* MobileService */,
+				4A70F9511FABEB8F000D2720 /* ModuleManager */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4A70F9511FABEB8F000D2720 /* ModuleManager */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9521FABEB9E000D2720 /* SCModuleManager.h */,
+				4A70F9531FABEB9E000D2720 /* SCModuleManager.m */,
+				4A70F9551FABEBC8000D2720 /* SCModule.h */,
+				4A70F9561FABEBC8000D2720 /* SCModule.m */,
+			);
+			path = ModuleManager;
+			sourceTree = "<group>";
+		};
+		4A70F9581FABEC79000D2720 /* MobileService */ = {
+			isa = PBXGroup;
+			children = (
+				4A70F9591FABECBF000D2720 /* MobileService.h */,
+				4A70F95A1FABECBF000D2720 /* MobileService.m */,
+			);
+			path = MobileService;
+			sourceTree = "<group>";
+		};
+		A15974F31C4F42C15758444A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A70F9211FA401DD000D2720 /* SlugBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A70F9381FA401DD000D2720 /* Build configuration list for PBXNativeTarget "SlugBot" */;
+			buildPhases = (
+				CE5B2BD2FD93B1D77FB0F349 /* [CP] Check Pods Manifest.lock */,
+				4A70F91E1FA401DD000D2720 /* Sources */,
+				4A70F91F1FA401DD000D2720 /* Frameworks */,
+				4A70F9201FA401DD000D2720 /* Resources */,
+				EDDB4867575AF83B508633B5 /* [CP] Embed Pods Frameworks */,
+				73D0BF8FF0686F651F44A942 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SlugBot;
+			productName = SlugBot;
+			productReference = 4A70F9221FA401DD000D2720 /* SlugBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A70F91A1FA401DD000D2720 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = UCSC;
+				TargetAttributes = {
+					4A70F9211FA401DD000D2720 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4A70F91D1FA401DD000D2720 /* Build configuration list for PBXProject "SlugBot" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A70F9191FA401DD000D2720;
+			productRefGroup = 4A70F9231FA401DD000D2720 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A70F9211FA401DD000D2720 /* SlugBot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A70F9201FA401DD000D2720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A70F9321FA401DD000D2720 /* LaunchScreen.storyboard in Resources */,
+				4A70F94B1FA41045000D2720 /* Media.xcassets in Resources */,
+				4A70F92F1FA401DD000D2720 /* Assets.xcassets in Resources */,
+				4A70F94F1FABCCC5000D2720 /* SCMobile.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73D0BF8FF0686F651F44A942 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE5B2BD2FD93B1D77FB0F349 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlugBot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDDB4867575AF83B508633B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A70F91E1FA401DD000D2720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */,
+				4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */,
+				4A70F9351FA401DD000D2720 /* main.m in Sources */,
+				4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */,
+				4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */,
+				4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */,
+				4A70F9491FA40A6B000D2720 /* ProfileListViewController.m in Sources */,
+				4A70F9271FA401DD000D2720 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4A70F9301FA401DD000D2720 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A70F9311FA401DD000D2720 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A70F9361FA401DD000D2720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4A70F9371FA401DD000D2720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A70F9391FA401DD000D2720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL5J7U42E5;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
+				INFOPLIST_FILE = SlugBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A70F93A1FA401DD000D2720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZL5J7U42E5;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
+				INFOPLIST_FILE = SlugBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugBot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A70F91D1FA401DD000D2720 /* Build configuration list for PBXProject "SlugBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A70F9361FA401DD000D2720 /* Debug */,
+				4A70F9371FA401DD000D2720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A70F9381FA401DD000D2720 /* Build configuration list for PBXNativeTarget "SlugBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A70F9391FA401DD000D2720 /* Debug */,
+				4A70F93A1FA401DD000D2720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A70F91A1FA401DD000D2720 /* Project object */;
+}
