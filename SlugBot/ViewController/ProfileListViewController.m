@@ -8,6 +8,8 @@
 
 #import "ProfileListViewController.h"
 #import "MobileService.h"
+#import "ProfileCollectionViewCell.h"
+#import "AvatarListViewController.h"
 
 @interface ProfileListViewController ()<
     UICollectionViewDelegate,
@@ -19,16 +21,27 @@
 @implementation ProfileListViewController{
     UICollectionView * collectionView;
     UIButton * addProfileButton;
+    NSArray* profiles;
 }
+
+NSString* profileCellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = LocalizedStr(@"ProfileListTitle");
+    self.view.backgroundColor = [UIColor whiteColor];
     UICollectionViewFlowLayout* collectionViewLayout =
         [[UICollectionViewFlowLayout alloc] init];
-    [collectionViewLayout setItemSize:CGSizeMake(60, 60)];
+    [collectionViewLayout setItemSize:CGSizeMake(106, 120)];
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     collectionView = [[UICollectionView alloc]
                       initWithFrame:CGRectZero
                       collectionViewLayout:collectionViewLayout];
+    collectionView.backgroundColor = [UIColor clearColor];
+    [collectionView registerClass:[ProfileCollectionViewCell class] forCellWithReuseIdentifier:profileCellIdentifier];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
     [self.view addSubview:collectionView];
     
     addProfileButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -44,17 +57,70 @@
         make.bottom.equalTo(self.view.mas_bottom).offset(-20);
     }];
     
-    SCRegisterClientRequest * request = [SCRegisterClientRequest new];
-    [request setDeviceToken:@"test"];
-    [request setPlatform:SCPlatform_Ios];
-    [[MobileService service] registerClientWithRequest:request
-                                               handler:^(SCRegisterClientResponse * _Nullable response, NSError * _Nullable error) {
-                                                   NSLog(@"%@",response.debugDescription);
-                                               }];
+    [collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(20);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.bottom.equalTo(addProfileButton.mas_top).offset(-20);
+    }];
+    
+    profiles = [NSArray new];
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self reloadData];
+}
+
+-(void)reloadData{
+    SCListProfilesRequest * request = [SCListProfilesRequest new];
+    [request setClientId:9];
+    [[MobileService service]
+     listProfilesWithRequest:request
+     handler:^(SCListProfilesResponse * _Nullable response, NSError * _Nullable error) {
+         profiles = [response profilesArray];
+         [collectionView reloadData];
+     }];
+}
+
 -(void)hitAddProfileButton{
+ UIAlertController* alert =
+    [UIAlertController alertControllerWithTitle:LocalizedStr(@"AddProfileAlertTitle")
+                                        message:LocalizedStr(@"AddProfileAlertMessage")
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    WS(wSelf);
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = LocalizedStr(@"AddProfileAlertPlaceholder");
+    }];
+    UIAlertAction * okAction =
+    [UIAlertAction actionWithTitle:LocalizedStr(@"AddProfileAlertActionOK")
+                             style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * _Nonnull action) {
+                               UITextField * nameTextField = [alert textFields][0];
+                               if(nameTextField.text.length>0){
+                                   AvatarListViewController * avatarListViewController = [AvatarListViewController new];
+                                   avatarListViewController.name = nameTextField.text;
+                                   [wSelf.navigationController pushViewController:avatarListViewController animated:YES];
+                               }
+                           }];
+    UIAlertAction * cancelAction =
+    [UIAlertAction actionWithTitle:LocalizedStr(@"AddProfileAlertActionCancel")
+                             style:UIAlertActionStyleDefault
+                           handler:nil];
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+//    SCProfile* profile = [SCProfile new];
+//    [profile setClientId:9];
+//    [profile setName:@"test profile"];
+//    [profile setAvatar:1];
+//    [[MobileService service] createProfileWithRequest:profile
+//                                              handler:^(SCProfile * _Nullable response, NSError * _Nullable error) {
+//                                                  NSLog(@"Profile created: %d\n", response.profileId);
+//                                                  [self reloadData];
+//                                              }];
     
 }
 
@@ -63,11 +129,19 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 0;
+    return [profiles count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+    ProfileCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:profileCellIdentifier
+                                                                                forIndexPath:indexPath];
+    if(!cell){
+        cell = [ProfileCollectionViewCell new];
+    }
+    
+    cell.profile = [profiles objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 @end

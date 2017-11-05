@@ -8,7 +8,6 @@ s.summary = "SCMobile"
 s.source = { :git => 'https://github.com/grpc/grpc.git' }
 
 s.ios.deployment_target = "7.1"
-s.osx.deployment_target = "10.9"
 
 # Base directory where the .proto files are.
 src = "/Users/lorabit/Develop/java/slugchat/protos"

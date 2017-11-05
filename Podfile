@@ -5,6 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'SlugBot' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
+  pod 'ApiAI'
   pod 'Masonry'
   pod 'SCMobile', :path => '.'
   # Pods for SlugBot

@@ -14,11 +14,15 @@
 		4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F93D1FA406FE000D2720 /* SBTool.m */; };
 		4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */; };
 		4A70F9491FA40A6B000D2720 /* ProfileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */; };
-		4A70F94B1FA41045000D2720 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F94A1FA41045000D2720 /* Media.xcassets */; };
 		4A70F94F1FABCCC5000D2720 /* SCMobile.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4A70F94E1FABCCC5000D2720 /* SCMobile.podspec */; };
 		4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9531FABEB9E000D2720 /* SCModuleManager.m */; };
 		4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F9561FABEBC8000D2720 /* SCModule.m */; };
 		4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A70F95A1FABECBF000D2720 /* MobileService.m */; };
+		4AE272501FAD92BC009A189D /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2724F1FAD92BC009A189D /* ProfileCollectionViewCell.m */; };
+		4AE272531FAECB38009A189D /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE272521FAECB38009A189D /* UIColor+Util.m */; };
+		4AE272571FAECF29009A189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE272591FAECF29009A189D /* Localizable.strings */; };
+		4AE2725D1FAEE558009A189D /* AvatarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725C1FAEE558009A189D /* AvatarListViewController.m */; };
+		4AE272601FAEE5A3009A189D /* AvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */; };
 		7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +41,6 @@
 		4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+RootView.m"; sourceTree = "<group>"; };
 		4A70F9471FA40A6B000D2720 /* ProfileListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileListViewController.h; sourceTree = "<group>"; };
 		4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileListViewController.m; sourceTree = "<group>"; };
-		4A70F94A1FA41045000D2720 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4A70F94E1FABCCC5000D2720 /* SCMobile.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = SCMobile.podspec; sourceTree = "<group>"; };
 		4A70F9521FABEB9E000D2720 /* SCModuleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCModuleManager.h; sourceTree = "<group>"; };
 		4A70F9531FABEB9E000D2720 /* SCModuleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCModuleManager.m; sourceTree = "<group>"; };
@@ -45,6 +48,16 @@
 		4A70F9561FABEBC8000D2720 /* SCModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCModule.m; sourceTree = "<group>"; };
 		4A70F9591FABECBF000D2720 /* MobileService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileService.h; sourceTree = "<group>"; };
 		4A70F95A1FABECBF000D2720 /* MobileService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileService.m; sourceTree = "<group>"; };
+		4AE2724E1FAD92BC009A189D /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
+		4AE2724F1FAD92BC009A189D /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
+		4AE272511FAECB38009A189D /* UIColor+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		4AE272521FAECB38009A189D /* UIColor+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		4AE272581FAECF29009A189D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4AE2725A1FAECF3F009A189D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4AE2725B1FAEE558009A189D /* AvatarListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarListViewController.h; sourceTree = "<group>"; };
+		4AE2725C1FAEE558009A189D /* AvatarListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarListViewController.m; sourceTree = "<group>"; };
+		4AE2725E1FAEE5A3009A189D /* AvatarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarCollectionViewCell.h; sourceTree = "<group>"; };
+		4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarCollectionViewCell.m; sourceTree = "<group>"; };
 		6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.release.xcconfig"; sourceTree = "<group>"; };
 		E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SlugBot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +106,7 @@
 		4A70F9241FA401DD000D2720 /* SlugBot */ = {
 			isa = PBXGroup;
 			children = (
+				4AE2724D1FAD8F39009A189D /* View */,
 				4A70F9501FABEB78000D2720 /* Modules */,
 				4A70F9461FA40A33000D2720 /* ViewController */,
 				4A70F93B1FA406C1000D2720 /* Util */,
@@ -103,7 +117,7 @@
 				4A70F9331FA401DD000D2720 /* Info.plist */,
 				4A70F9341FA401DD000D2720 /* main.m */,
 				4A70F93F1FA40712000D2720 /* Header.h */,
-				4A70F94A1FA41045000D2720 /* Media.xcassets */,
+				4AE272591FAECF29009A189D /* Localizable.strings */,
 			);
 			path = SlugBot;
 			sourceTree = "<group>";
@@ -115,6 +129,8 @@
 				4A70F93D1FA406FE000D2720 /* SBTool.m */,
 				4A70F9431FA407DF000D2720 /* AppDelegate+RootView.h */,
 				4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */,
+				4AE272511FAECB38009A189D /* UIColor+Util.h */,
+				4AE272521FAECB38009A189D /* UIColor+Util.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -124,6 +140,8 @@
 			children = (
 				4A70F9471FA40A6B000D2720 /* ProfileListViewController.h */,
 				4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */,
+				4AE2725B1FAEE558009A189D /* AvatarListViewController.h */,
+				4AE2725C1FAEE558009A189D /* AvatarListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -155,6 +173,17 @@
 				4A70F95A1FABECBF000D2720 /* MobileService.m */,
 			);
 			path = MobileService;
+			sourceTree = "<group>";
+		};
+		4AE2724D1FAD8F39009A189D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AE2724E1FAD92BC009A189D /* ProfileCollectionViewCell.h */,
+				4AE2724F1FAD92BC009A189D /* ProfileCollectionViewCell.m */,
+				4AE2725E1FAEE5A3009A189D /* AvatarCollectionViewCell.h */,
+				4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A15974F31C4F42C15758444A /* Frameworks */ = {
@@ -210,6 +239,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4A70F9191FA401DD000D2720;
 			productRefGroup = 4A70F9231FA401DD000D2720 /* Products */;
@@ -227,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A70F9321FA401DD000D2720 /* LaunchScreen.storyboard in Resources */,
-				4A70F94B1FA41045000D2720 /* Media.xcassets in Resources */,
+				4AE272571FAECF29009A189D /* Localizable.strings in Resources */,
 				4A70F92F1FA401DD000D2720 /* Assets.xcassets in Resources */,
 				4A70F94F1FABCCC5000D2720 /* SCMobile.podspec in Resources */,
 			);
@@ -243,6 +273,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot-resources.sh",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage@2x.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage@3x.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage@2x.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage@3x.png",
+				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Classes/AIVoiceRequestButton.xib",
+				"${PODS_ROOT}/ApiAI/ApiAI/VoiceRequest/Resources/beep.caf",
 				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
@@ -295,13 +333,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */,
+				4AE272501FAD92BC009A189D /* ProfileCollectionViewCell.m in Sources */,
 				4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */,
 				4A70F9351FA401DD000D2720 /* main.m in Sources */,
 				4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */,
 				4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */,
 				4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */,
 				4A70F9491FA40A6B000D2720 /* ProfileListViewController.m in Sources */,
+				4AE2725D1FAEE558009A189D /* AvatarListViewController.m in Sources */,
 				4A70F9271FA401DD000D2720 /* AppDelegate.m in Sources */,
+				4AE272531FAECB38009A189D /* UIColor+Util.m in Sources */,
+				4AE272601FAEE5A3009A189D /* AvatarCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +358,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		4AE272591FAECF29009A189D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4AE272581FAECF29009A189D /* en */,
+				4AE2725A1FAECF3F009A189D /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -323,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -378,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
