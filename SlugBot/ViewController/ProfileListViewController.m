@@ -10,6 +10,7 @@
 #import "MobileService.h"
 #import "ProfileCollectionViewCell.h"
 #import "AvatarListViewController.h"
+#import "ChatbotViewController.h"
 
 @interface ProfileListViewController ()<
     UICollectionViewDelegate,
@@ -21,7 +22,7 @@
 @implementation ProfileListViewController{
     UICollectionView * collectionView;
     UIButton * addProfileButton;
-    NSArray* profiles;
+    NSArray<SCProfile*>* profiles;
 }
 
 NSString* profileCellIdentifier = @"cell";
@@ -66,6 +67,10 @@ NSString* profileCellIdentifier = @"cell";
     
     profiles = [NSArray new];
     
+    if([SBUser user].profileId > 0){
+        [self.navigationController pushViewController:[ChatbotViewController new] animated:YES];
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -75,7 +80,7 @@ NSString* profileCellIdentifier = @"cell";
 
 -(void)reloadData{
     SCListProfilesRequest * request = [SCListProfilesRequest new];
-    [request setClientId:9];
+    [request setClientId:[SBUser user].clientId];
     [[MobileService service]
      listProfilesWithRequest:request
      handler:^(SCListProfilesResponse * _Nullable response, NSError * _Nullable error) {
@@ -142,6 +147,11 @@ NSString* profileCellIdentifier = @"cell";
     cell.profile = [profiles objectAtIndex:indexPath.row];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [SBUser user].profileId = [profiles objectAtIndex:indexPath.row].profileId;
+    [self.navigationController pushViewController:[ChatbotViewController new] animated:YES];
 }
 
 @end

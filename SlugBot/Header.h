@@ -9,6 +9,8 @@
 #ifndef Header_h
 #define Header_h
 
+#define DIALOGFLOW_TOKEN @"360f730cc1034b19864a1cae700ff632"
+
 #import <objc/runtime.h>
 #import "SBTool.h"
 
@@ -16,6 +18,7 @@
 
 
 #import "UIColor+Util.h"
+#import "SBUser.h"
 
 
 #define MainScreenBounds    [UIScreen mainScreen].bounds

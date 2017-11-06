@@ -80,6 +80,7 @@ NSString* avatarCellIdentifier = @"cell";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     SCProfile * profile = [SCProfile new];
     profile.name = self.name;
+    profile.clientId = [SBUser user].clientId;
     profile.avatar = (int)indexPath.row;
     [[MobileService service] createProfileWithRequest:profile
                                               handler:^(SCProfile * _Nullable response, NSError * _Nullable error) {

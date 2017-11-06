@@ -23,6 +23,12 @@
 		4AE272571FAECF29009A189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE272591FAECF29009A189D /* Localizable.strings */; };
 		4AE2725D1FAEE558009A189D /* AvatarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725C1FAEE558009A189D /* AvatarListViewController.m */; };
 		4AE272601FAEE5A3009A189D /* AvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */; };
+		4AF8F4A51FAF020600494D4A /* SBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4A41FAF020600494D4A /* SBUser.m */; };
+		4AF8F4A91FAFEEE500494D4A /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4A81FAFEEE500494D4A /* AppDelegate+Notification.m */; };
+		4AF8F4AB1FAFF4CD00494D4A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4AA1FAFF4CD00494D4A /* UserNotifications.framework */; };
+		4AF8F4AE1FAFF68200494D4A /* AppDelegate+RegisterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4AD1FAFF68200494D4A /* AppDelegate+RegisterClient.m */; };
+		4AF8F4B11FB0028200494D4A /* ChatbotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4B01FB0028200494D4A /* ChatbotViewController.m */; };
+		4AF8F4B51FB0045700494D4A /* DialogflowModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4B41FB0045700494D4A /* DialogflowModule.m */; };
 		7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +64,18 @@
 		4AE2725C1FAEE558009A189D /* AvatarListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarListViewController.m; sourceTree = "<group>"; };
 		4AE2725E1FAEE5A3009A189D /* AvatarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarCollectionViewCell.h; sourceTree = "<group>"; };
 		4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarCollectionViewCell.m; sourceTree = "<group>"; };
+		4AF8F4A31FAF020600494D4A /* SBUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBUser.h; sourceTree = "<group>"; };
+		4AF8F4A41FAF020600494D4A /* SBUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBUser.m; sourceTree = "<group>"; };
+		4AF8F4A61FAFEE9A00494D4A /* SlugBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlugBot.entitlements; sourceTree = "<group>"; };
+		4AF8F4A71FAFEEE500494D4A /* AppDelegate+Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Notification.h"; sourceTree = "<group>"; };
+		4AF8F4A81FAFEEE500494D4A /* AppDelegate+Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Notification.m"; sourceTree = "<group>"; };
+		4AF8F4AA1FAFF4CD00494D4A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		4AF8F4AC1FAFF68200494D4A /* AppDelegate+RegisterClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+RegisterClient.h"; sourceTree = "<group>"; };
+		4AF8F4AD1FAFF68200494D4A /* AppDelegate+RegisterClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+RegisterClient.m"; sourceTree = "<group>"; };
+		4AF8F4AF1FB0028200494D4A /* ChatbotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatbotViewController.h; sourceTree = "<group>"; };
+		4AF8F4B01FB0028200494D4A /* ChatbotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatbotViewController.m; sourceTree = "<group>"; };
+		4AF8F4B31FB0045700494D4A /* DialogflowModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialogflowModule.h; sourceTree = "<group>"; };
+		4AF8F4B41FB0045700494D4A /* DialogflowModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialogflowModule.m; sourceTree = "<group>"; };
 		6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.release.xcconfig"; sourceTree = "<group>"; };
 		E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SlugBot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF8F4AB1FAFF4CD00494D4A /* UserNotifications.framework in Frameworks */,
 				7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +125,7 @@
 		4A70F9241FA401DD000D2720 /* SlugBot */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8F4A61FAFEE9A00494D4A /* SlugBot.entitlements */,
 				4AE2724D1FAD8F39009A189D /* View */,
 				4A70F9501FABEB78000D2720 /* Modules */,
 				4A70F9461FA40A33000D2720 /* ViewController */,
@@ -131,6 +151,12 @@
 				4A70F9441FA407DF000D2720 /* AppDelegate+RootView.m */,
 				4AE272511FAECB38009A189D /* UIColor+Util.h */,
 				4AE272521FAECB38009A189D /* UIColor+Util.m */,
+				4AF8F4A31FAF020600494D4A /* SBUser.h */,
+				4AF8F4A41FAF020600494D4A /* SBUser.m */,
+				4AF8F4A71FAFEEE500494D4A /* AppDelegate+Notification.h */,
+				4AF8F4A81FAFEEE500494D4A /* AppDelegate+Notification.m */,
+				4AF8F4AC1FAFF68200494D4A /* AppDelegate+RegisterClient.h */,
+				4AF8F4AD1FAFF68200494D4A /* AppDelegate+RegisterClient.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -142,6 +168,8 @@
 				4A70F9481FA40A6B000D2720 /* ProfileListViewController.m */,
 				4AE2725B1FAEE558009A189D /* AvatarListViewController.h */,
 				4AE2725C1FAEE558009A189D /* AvatarListViewController.m */,
+				4AF8F4AF1FB0028200494D4A /* ChatbotViewController.h */,
+				4AF8F4B01FB0028200494D4A /* ChatbotViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -149,6 +177,7 @@
 		4A70F9501FABEB78000D2720 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8F4B21FB0040900494D4A /* DialogflowModule */,
 				4A70F9581FABEC79000D2720 /* MobileService */,
 				4A70F9511FABEB8F000D2720 /* ModuleManager */,
 			);
@@ -186,9 +215,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4AF8F4B21FB0040900494D4A /* DialogflowModule */ = {
+			isa = PBXGroup;
+			children = (
+				4AF8F4B31FB0045700494D4A /* DialogflowModule.h */,
+				4AF8F4B41FB0045700494D4A /* DialogflowModule.m */,
+			);
+			path = DialogflowModule;
+			sourceTree = "<group>";
+		};
 		A15974F31C4F42C15758444A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8F4AA1FAFF4CD00494D4A /* UserNotifications.framework */,
 				E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */,
 			);
 			name = Frameworks;
@@ -229,6 +268,11 @@
 					4A70F9211FA401DD000D2720 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -334,12 +378,17 @@
 			files = (
 				4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */,
 				4AE272501FAD92BC009A189D /* ProfileCollectionViewCell.m in Sources */,
+				4AF8F4AE1FAFF68200494D4A /* AppDelegate+RegisterClient.m in Sources */,
 				4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */,
+				4AF8F4A91FAFEEE500494D4A /* AppDelegate+Notification.m in Sources */,
+				4AF8F4A51FAF020600494D4A /* SBUser.m in Sources */,
+				4AF8F4B11FB0028200494D4A /* ChatbotViewController.m in Sources */,
 				4A70F9351FA401DD000D2720 /* main.m in Sources */,
 				4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */,
 				4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */,
 				4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */,
 				4A70F9491FA40A6B000D2720 /* ProfileListViewController.m in Sources */,
+				4AF8F4B51FB0045700494D4A /* DialogflowModule.m in Sources */,
 				4AE2725D1FAEE558009A189D /* AvatarListViewController.m in Sources */,
 				4A70F9271FA401DD000D2720 /* AppDelegate.m in Sources */,
 				4AE272531FAECB38009A189D /* UIColor+Util.m in Sources */,
@@ -481,6 +530,7 @@
 			baseConfigurationReference = F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SlugBot/SlugBot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL5J7U42E5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
@@ -497,6 +547,7 @@
 			baseConfigurationReference = 6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SlugBot/SlugBot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL5J7U42E5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
