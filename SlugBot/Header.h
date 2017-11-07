@@ -10,6 +10,7 @@
 #define Header_h
 
 #define DIALOGFLOW_TOKEN @"360f730cc1034b19864a1cae700ff632"
+#define IFLY_APPID @"5a00dc5e"
 
 #import <objc/runtime.h>
 #import "SBTool.h"

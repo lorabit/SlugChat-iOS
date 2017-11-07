@@ -8,12 +8,18 @@
 
 #import "ChatbotViewController.h"
 #import "DialogflowModule.h"
+#import "SpeechRecognitionModule.h"
 
-@interface ChatbotViewController ()
+@interface ChatbotViewController ()<
+    SpeechRecognizerDelegate
+>
 
 @end
 
-@implementation ChatbotViewController
+@implementation ChatbotViewController{
+    UIButton * btn;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +33,24 @@
         NSLog(@"%@\n", [error localizedDescription]);
     }];
     [[DialogflowModule module] enqueue:textRequest];
+    [[SpeechRecognitionModule module] setDelegate:self];
+    
+    
+    btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:self action:@selector(hitBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"test" forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor blueColor]];
+    [self.view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.width.equalTo(self.view);
+        make.height.equalTo(@100);
+    }];
+}
+
+-(void)hitBtn{
+    [[SpeechRecognitionModule module] start];
+    NSLog(@"Start ...\n");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,14 +58,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)onStart{
+    [btn setTitle:@"Listening..." forState:UIControlStateNormal];
 }
-*/
 
+-(void)onEndWithResult:(NSString *)text{
+    NSLog(@"%@\n",text);
+    [btn setTitle:text forState:UIControlStateNormal];
+    
+}
 @end

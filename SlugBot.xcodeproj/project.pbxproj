@@ -29,6 +29,20 @@
 		4AF8F4AE1FAFF68200494D4A /* AppDelegate+RegisterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4AD1FAFF68200494D4A /* AppDelegate+RegisterClient.m */; };
 		4AF8F4B11FB0028200494D4A /* ChatbotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4B01FB0028200494D4A /* ChatbotViewController.m */; };
 		4AF8F4B51FB0045700494D4A /* DialogflowModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4B41FB0045700494D4A /* DialogflowModule.m */; };
+		4AF8F4BB1FB131A400494D4A /* SpeechRecognitionModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4BA1FB131A400494D4A /* SpeechRecognitionModule.m */; };
+		4AF8F4BD1FB1329300494D4A /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4BC1FB1329300494D4A /* iflyMSC.framework */; };
+		4AF8F4BF1FB1338B00494D4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4BE1FB1338B00494D4A /* AVFoundation.framework */; };
+		4AF8F4C11FB1339300494D4A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4C01FB1339200494D4A /* SystemConfiguration.framework */; };
+		4AF8F4C31FB1339C00494D4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4C21FB1339C00494D4A /* Foundation.framework */; };
+		4AF8F4C51FB133A300494D4A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4C41FB133A300494D4A /* CoreTelephony.framework */; };
+		4AF8F4C71FB133AC00494D4A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4C61FB133AC00494D4A /* AudioToolbox.framework */; };
+		4AF8F4C91FB133B700494D4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4C81FB133B700494D4A /* UIKit.framework */; };
+		4AF8F4CB1FB133BF00494D4A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4CA1FB133BF00494D4A /* CoreLocation.framework */; };
+		4AF8F4CD1FB133C700494D4A /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4CC1FB133C700494D4A /* Contacts.framework */; };
+		4AF8F4CF1FB133CF00494D4A /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4CE1FB133CF00494D4A /* AddressBook.framework */; };
+		4AF8F4D11FB133CF00494D4A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4D01FB133CF00494D4A /* QuartzCore.framework */; };
+		4AF8F4D31FB133DC00494D4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4D21FB133DC00494D4A /* CoreGraphics.framework */; };
+		4AF8F4D71FB1413900494D4A /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4D61FB1413900494D4A /* ISRDataHelper.m */; };
 		7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +90,23 @@
 		4AF8F4B01FB0028200494D4A /* ChatbotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatbotViewController.m; sourceTree = "<group>"; };
 		4AF8F4B31FB0045700494D4A /* DialogflowModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialogflowModule.h; sourceTree = "<group>"; };
 		4AF8F4B41FB0045700494D4A /* DialogflowModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialogflowModule.m; sourceTree = "<group>"; };
+		4AF8F4B91FB131A400494D4A /* SpeechRecognitionModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechRecognitionModule.h; sourceTree = "<group>"; };
+		4AF8F4BA1FB131A400494D4A /* SpeechRecognitionModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognitionModule.m; sourceTree = "<group>"; };
+		4AF8F4BC1FB1329300494D4A /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		4AF8F4BE1FB1338B00494D4A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4AF8F4C01FB1339200494D4A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4AF8F4C21FB1339C00494D4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4AF8F4C41FB133A300494D4A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		4AF8F4C61FB133AC00494D4A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4AF8F4C81FB133B700494D4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4AF8F4CA1FB133BF00494D4A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4AF8F4CC1FB133C700494D4A /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		4AF8F4CE1FB133CF00494D4A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		4AF8F4D01FB133CF00494D4A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4AF8F4D21FB133DC00494D4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4AF8F4D41FB136A400494D4A /* SpeechRecognizerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechRecognizerDelegate.h; sourceTree = "<group>"; };
+		4AF8F4D51FB1413900494D4A /* ISRDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		4AF8F4D61FB1413900494D4A /* ISRDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		6CCB0B29F5E74A10A582CD5F /* Pods-SlugBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.release.xcconfig"; sourceTree = "<group>"; };
 		E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SlugBot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F446648B3210D39850A494F2 /* Pods-SlugBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlugBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +117,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF8F4D31FB133DC00494D4A /* CoreGraphics.framework in Frameworks */,
+				4AF8F4D11FB133CF00494D4A /* QuartzCore.framework in Frameworks */,
+				4AF8F4CF1FB133CF00494D4A /* AddressBook.framework in Frameworks */,
+				4AF8F4CD1FB133C700494D4A /* Contacts.framework in Frameworks */,
+				4AF8F4CB1FB133BF00494D4A /* CoreLocation.framework in Frameworks */,
+				4AF8F4C91FB133B700494D4A /* UIKit.framework in Frameworks */,
+				4AF8F4C71FB133AC00494D4A /* AudioToolbox.framework in Frameworks */,
+				4AF8F4C51FB133A300494D4A /* CoreTelephony.framework in Frameworks */,
+				4AF8F4C31FB1339C00494D4A /* Foundation.framework in Frameworks */,
+				4AF8F4C11FB1339300494D4A /* SystemConfiguration.framework in Frameworks */,
+				4AF8F4BF1FB1338B00494D4A /* AVFoundation.framework in Frameworks */,
+				4AF8F4BD1FB1329300494D4A /* iflyMSC.framework in Frameworks */,
 				4AF8F4AB1FAFF4CD00494D4A /* UserNotifications.framework in Frameworks */,
 				7DE80C5EC1DA5E3E12081CD6 /* libPods-SlugBot.a in Frameworks */,
 			);
@@ -177,6 +220,7 @@
 		4A70F9501FABEB78000D2720 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8F4B81FB1319200494D4A /* SpeechRecognitionModule */,
 				4AF8F4B21FB0040900494D4A /* DialogflowModule */,
 				4A70F9581FABEC79000D2720 /* MobileService */,
 				4A70F9511FABEB8F000D2720 /* ModuleManager */,
@@ -224,9 +268,33 @@
 			path = DialogflowModule;
 			sourceTree = "<group>";
 		};
+		4AF8F4B81FB1319200494D4A /* SpeechRecognitionModule */ = {
+			isa = PBXGroup;
+			children = (
+				4AF8F4B91FB131A400494D4A /* SpeechRecognitionModule.h */,
+				4AF8F4BA1FB131A400494D4A /* SpeechRecognitionModule.m */,
+				4AF8F4D41FB136A400494D4A /* SpeechRecognizerDelegate.h */,
+				4AF8F4D51FB1413900494D4A /* ISRDataHelper.h */,
+				4AF8F4D61FB1413900494D4A /* ISRDataHelper.m */,
+			);
+			path = SpeechRecognitionModule;
+			sourceTree = "<group>";
+		};
 		A15974F31C4F42C15758444A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AF8F4D21FB133DC00494D4A /* CoreGraphics.framework */,
+				4AF8F4D01FB133CF00494D4A /* QuartzCore.framework */,
+				4AF8F4CE1FB133CF00494D4A /* AddressBook.framework */,
+				4AF8F4CC1FB133C700494D4A /* Contacts.framework */,
+				4AF8F4CA1FB133BF00494D4A /* CoreLocation.framework */,
+				4AF8F4C81FB133B700494D4A /* UIKit.framework */,
+				4AF8F4C61FB133AC00494D4A /* AudioToolbox.framework */,
+				4AF8F4C41FB133A300494D4A /* CoreTelephony.framework */,
+				4AF8F4C21FB1339C00494D4A /* Foundation.framework */,
+				4AF8F4C01FB1339200494D4A /* SystemConfiguration.framework */,
+				4AF8F4BE1FB1338B00494D4A /* AVFoundation.framework */,
+				4AF8F4BC1FB1329300494D4A /* iflyMSC.framework */,
 				4AF8F4AA1FAFF4CD00494D4A /* UserNotifications.framework */,
 				E2C2FA99855F22EEE0319416 /* libPods-SlugBot.a */,
 			);
@@ -377,10 +445,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A70F9571FABEBC8000D2720 /* SCModule.m in Sources */,
+				4AF8F4BB1FB131A400494D4A /* SpeechRecognitionModule.m in Sources */,
 				4AE272501FAD92BC009A189D /* ProfileCollectionViewCell.m in Sources */,
 				4AF8F4AE1FAFF68200494D4A /* AppDelegate+RegisterClient.m in Sources */,
 				4A70F9451FA407DF000D2720 /* AppDelegate+RootView.m in Sources */,
 				4AF8F4A91FAFEEE500494D4A /* AppDelegate+Notification.m in Sources */,
+				4AF8F4D71FB1413900494D4A /* ISRDataHelper.m in Sources */,
 				4AF8F4A51FAF020600494D4A /* SBUser.m in Sources */,
 				4AF8F4B11FB0028200494D4A /* ChatbotViewController.m in Sources */,
 				4A70F9351FA401DD000D2720 /* main.m in Sources */,
@@ -533,6 +603,11 @@
 				CODE_SIGN_ENTITLEMENTS = SlugBot/SlugBot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL5J7U42E5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
 				INFOPLIST_FILE = SlugBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -550,6 +625,11 @@
 				CODE_SIGN_ENTITLEMENTS = SlugBot/SlugBot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL5J7U42E5;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SlugBot/Header.h";
 				INFOPLIST_FILE = SlugBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

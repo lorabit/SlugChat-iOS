@@ -9,7 +9,7 @@
 #import "MobileService.h"
 #import <GRPCClient/GRPCCall+Tests.h>
 
-#define HOST @"10.0.0.213:50051"
+#define HOST @"128.114.154.69:50051"
 
 @implementation MobileService{
     SCMobile * mobile;
