@@ -9,9 +9,11 @@
 #import "ChatbotViewController.h"
 #import "DialogflowModule.h"
 #import "SpeechRecognitionModule.h"
+#import "SpeechSynthesizerModule.h"
 
 @interface ChatbotViewController ()<
-    SpeechRecognizerDelegate
+    SpeechRecognizerDelegate,
+SpeechSynthesizerDelegate
 >
 
 @end
@@ -25,15 +27,9 @@
     [super viewDidLoad];
     self.title = LocalizedStr(@"ChatbotTitle");
     self.view.backgroundColor = [UIColor whiteColor];
-    AITextRequest * textRequest = [[DialogflowModule module] textRequest];
-    textRequest.query = @"你好！";
-    [textRequest setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        NSLog(@"%@\n", [response debugDescription]);
-    } failure:^(AIRequest *request, NSError *error) {
-        NSLog(@"%@\n", [error localizedDescription]);
-    }];
-    [[DialogflowModule module] enqueue:textRequest];
+
     [[SpeechRecognitionModule module] setDelegate:self];
+    [[SpeechSynthesizerModule module] setDelegate:self];
     
     
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -66,6 +62,19 @@
 -(void)onEndWithResult:(NSString *)text{
     NSLog(@"%@\n",text);
     [btn setTitle:text forState:UIControlStateNormal];
-    
+    AITextRequest * textRequest = [[DialogflowModule module] textRequest];
+    textRequest.query = text;
+    [textRequest setCompletionBlockSuccess:^(AIRequest *request, id response) {
+        [[SpeechSynthesizerModule module] startWithText:response[@"result"][@"fulfillment"][@"speech"]];
+        NSLog(@"%@\n", [response debugDescription]);
+    } failure:^(AIRequest *request, NSError *error) {
+        NSLog(@"%@\n", [error localizedDescription]);
+        [[SpeechRecognitionModule module] start];
+    }];
+    [[DialogflowModule module] enqueue:textRequest];
+}
+
+-(void)onSyncStop:(BOOL)hasError{
+    [[SpeechRecognitionModule module] start];
 }
 @end
