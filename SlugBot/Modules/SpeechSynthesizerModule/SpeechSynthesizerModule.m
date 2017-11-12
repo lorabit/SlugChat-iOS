@@ -52,7 +52,9 @@
 }
 
 -(void)stop{
-    [iFlySpeechSynthesizer stopSpeaking];
+    if(iFlySpeechSynthesizer){
+        [iFlySpeechSynthesizer stopSpeaking];
+    }
 }
 
 - (void)initSynthesizer

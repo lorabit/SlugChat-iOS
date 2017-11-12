@@ -45,6 +45,7 @@ SpeechSynthesizerDelegate
 }
 
 -(void)hitBtn{
+    [[SpeechSynthesizerModule module] stop];
     [[SpeechRecognitionModule module] start];
     NSLog(@"Start ...\n");
 }
