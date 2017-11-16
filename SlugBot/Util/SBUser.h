@@ -15,6 +15,7 @@
 +(instancetype)user;
 
 @property(nonatomic,copy) NSString* deviceToken;
+@property(nonatomic,copy) NSString* profileName;
 @property(nonatomic) NSInteger clientId;
 @property(nonatomic) BOOL isDeviceTokenUploaded;
 @property(nonatomic) NSInteger profileId;

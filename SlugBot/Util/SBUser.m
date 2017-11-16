@@ -35,6 +35,7 @@
             _profileId = 0;
         }
         _deviceToken =[USERDEFAULT objectForKey:@"deviceToken"];
+        _profileName =[USERDEFAULT objectForKey:@"profileName"];
         if([USERDEFAULT objectForKey:@"isDeviceTokenUploaded"]){
             _isDeviceTokenUploaded = [[USERDEFAULT objectForKey:@"isDeviceTokenUploaded"] boolValue];
         }else{
@@ -56,6 +57,15 @@
     _deviceToken = deviceToken;
     [USERDEFAULT setObject:deviceToken forKey:@"deviceToken"];
     [self setIsDeviceTokenUploaded:NO];
+}
+
+
+-(void)setProfileName:(NSString *)profileName{
+    if([_profileName isEqualToString:profileName]){
+        return;
+    }
+    _profileName = profileName;
+    [USERDEFAULT setObject:profileName forKey:@"profileName"];
 }
 
 -(void)setIsDeviceTokenUploaded:(BOOL)isDeviceTokenUploaded{

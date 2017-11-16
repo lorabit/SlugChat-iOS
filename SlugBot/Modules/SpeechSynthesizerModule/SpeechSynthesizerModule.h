@@ -13,6 +13,9 @@
 
 
 @property(nonatomic,weak) id<SpeechSynthesizerDelegate> delegate;
+@property(nonatomic,readonly) int progress;
+@property(nonatomic,readonly) int beginPos;
+@property(nonatomic,readonly) int endPos;
 
 +(instancetype)module;
 

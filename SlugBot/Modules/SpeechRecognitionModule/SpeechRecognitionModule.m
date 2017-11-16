@@ -40,6 +40,11 @@
 }
 
 -(void)initializeModuleWithApplication:(UIApplication *)application options:(NSDictionary *)launchOptions{
+    
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        
+    }];
+    
     //设置sdk的log等级，log保存在下面设置的工作路径中
     [IFlySetting setLogFile:LVL_NONE];
     

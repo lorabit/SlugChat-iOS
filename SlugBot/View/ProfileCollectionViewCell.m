@@ -32,6 +32,8 @@
             make.centerX.equalTo(self.contentView);
             make.top.equalTo(avatarView.mas_bottom).offset(5);
         }];
+        
+       
     }
     return self;
 }

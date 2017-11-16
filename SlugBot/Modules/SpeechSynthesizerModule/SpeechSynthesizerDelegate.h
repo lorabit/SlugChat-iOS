@@ -13,4 +13,7 @@
 @required
 -(void)onSyncStop:(BOOL)hasError;
 
+@optional
+-(void)onProgress;
+
 @end

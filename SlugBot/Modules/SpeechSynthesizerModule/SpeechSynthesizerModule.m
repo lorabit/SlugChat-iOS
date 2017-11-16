@@ -47,7 +47,9 @@
     if(iFlySpeechSynthesizer == nil){
         [self initSynthesizer];
     }
-    
+    _progress = 0;
+    _beginPos = 0;
+    _endPos = 0;
     [iFlySpeechSynthesizer startSpeaking:text];
 }
 
@@ -96,6 +98,12 @@
     if(self.delegate){
         [self.delegate onSyncStop:error!=nil];
     }
+}
+
+-(void)onSpeakProgress:(int)progress beginPos:(int)beginPos endPos:(int)endPos{
+    _progress = progress;
+    _beginPos = beginPos;
+    _endPos = endPos;
 }
 
 

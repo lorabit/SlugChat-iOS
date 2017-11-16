@@ -8,3 +8,19 @@
 
 
 ProfileListTitle = "Profiles";
+CopyrightTwemoji = "All images for avatar are from Twemoji.";
+
+
+AddProfileAlertTitle = "Create Profile";
+AddProfileAlertMessage = "Please enter a name for the new profile.\n Each kid should have her/his own profile.";
+AddProfileAlertActionOK = "OK";
+AddProfileAlertActionCancel = "Cancel";
+AddProfileAlertPlaceholder = "Nickname";
+
+AvatarListTitle = "Pick An Avatar";
+
+ChatbotTitle = "SlugChat";
+
+NetworkAlertTitle = "Network error";
+NetworkAlertMessage = "Please check your connection and try again.";
+NetworkAlertActionOK = "OK";

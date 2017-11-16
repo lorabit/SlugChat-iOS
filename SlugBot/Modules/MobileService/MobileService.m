@@ -9,7 +9,16 @@
 #import "MobileService.h"
 #import <GRPCClient/GRPCCall+Tests.h>
 
-#define HOST @"ec2-34-216-5-83.us-west-2.compute.amazonaws.com:50051"
+//#define HOST @"ec2-34-216-5-83.us-west-2.compute.amazonaws.com:50051"
+#ifdef DEBUG
+
+#define HOST @"10.0.0.213:50051"
+
+#else
+
+#define HOST @"10.0.0.213:50051"
+
+#endif
 
 @implementation MobileService{
     SCMobile * mobile;

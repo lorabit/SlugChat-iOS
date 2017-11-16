@@ -7,3 +7,20 @@
 */
 
 ProfileListTitle = "用户列表";
+CopyrightTwemoji = "头像图像版权归Twemoji所有。";
+
+
+AddProfileAlertTitle = "创建用户";
+AddProfileAlertMessage = "请输入一个新的用户名称。\n请为每个小孩创建不同的用户。";
+AddProfileAlertActionOK = "好的";
+AddProfileAlertActionCancel = "取消";
+AddProfileAlertPlaceholder = "昵称";
+
+AvatarListTitle = "选择一个头像";
+
+ChatbotTitle = "一只小虫";
+
+
+NetworkAlertTitle = "网络异常";
+NetworkAlertMessage = "请检查网络连接后再重试。";
+NetworkAlertActionOK = "好的";
