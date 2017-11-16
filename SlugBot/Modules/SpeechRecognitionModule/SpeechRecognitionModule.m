@@ -119,7 +119,6 @@
     
     BOOL ret  = [iFlySpeechRecognizer startListening];
     
-    
     if (ret) {
         //初始化录音环境
         [IFlyAudioSession initRecordingAudioSession];
@@ -144,6 +143,13 @@
     [iFlySpeechRecognizer stopListening];
     [pcmRecorder stop];
     [self.delegate onEndWithResult:@""];
+}
+
+-(BOOL)isListening{
+    if(iFlySpeechRecognizer){
+        return iFlySpeechRecognizer.isListening;
+    }
+    return NO;
 }
 
 
@@ -193,5 +199,6 @@
 -(void)onIFlyRecorderError:(IFlyPcmRecorder *)recoder theError:(int)error{
     
 }
+
 
 @end

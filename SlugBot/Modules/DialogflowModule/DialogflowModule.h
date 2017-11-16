@@ -7,13 +7,13 @@
 //
 
 #import "SCModule.h"
-#import <ApiAI.h>
+//#import <ApiAI.h>
 
 @interface DialogflowModule : SCModule
 
-+(instancetype)module;
-@property(nonatomic,strong) ApiAI* apiAi;
--(void)enqueue:(AIRequest*) request;
--(AITextRequest*)textRequest;
+//+(instancetype)module;
+//@property(nonatomic,strong) ApiAI* apiAi;
+//-(void)enqueue:(AIRequest*) request;
+//-(AITextRequest*)textRequest;
 
 @end

@@ -98,6 +98,9 @@
     if(self.delegate){
         [self.delegate onSyncStop:error!=nil];
     }
+    _progress = 0;
+    _endPos = 0;
+    _beginPos = 0;
 }
 
 -(void)onSpeakProgress:(int)progress beginPos:(int)beginPos endPos:(int)endPos{

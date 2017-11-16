@@ -13,7 +13,7 @@
 
 
 +(instancetype)module;
-
+@property(nonatomic,readonly) BOOL isListening;
 @property(nonatomic,weak) id<SpeechRecognizerDelegate> delegate;
 
 -(void)start;

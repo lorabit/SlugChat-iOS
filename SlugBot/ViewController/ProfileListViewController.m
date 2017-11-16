@@ -127,6 +127,9 @@ NSString* profileCellIdentifier = @"cell";
              return;
          }
          profiles = [response profilesArray];
+         if(profiles.count == 0){
+             [self hitAddProfileButton];
+         }
          [collectionView reloadData];
      }];
 }

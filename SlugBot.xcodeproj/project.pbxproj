@@ -421,14 +421,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SlugBot/Pods-SlugBot-resources.sh",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage@2x.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AICubeIconImage@3x.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage@2x.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Images/AIMicrophoneControlImage@3x.png",
-				"${PODS_ROOT}/ApiAI/ApiAI/UIKit/Classes/AIVoiceRequestButton.xib",
-				"${PODS_ROOT}/ApiAI/ApiAI/VoiceRequest/Resources/beep.caf",
 				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
@@ -568,7 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -618,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

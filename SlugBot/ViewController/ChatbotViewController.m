@@ -7,7 +7,7 @@
 //
 
 #import "ChatbotViewController.h"
-#import "DialogflowModule.h"
+//#import "DialogflowModule.h"
 #import "SpeechRecognitionModule.h"
 #import "SpeechSynthesizerModule.h"
 #import "MobileService.h"
@@ -66,10 +66,29 @@ EmotionDelegate
     [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self interactWithMobileService:@"你好!"];
+}
+
 -(void)hitBtn{
+    if([SpeechRecognitionModule module].isListening){
+        return;
+    }
+    if([SpeechSynthesizerModule module].endPos>0){
+        SCLog* log = [SCLog new];
+        log.profileId = [SBUser user].profileId;
+        log.logType = SCLog_LogType_InterruptSpeech;
+        log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
+        [[MobileService service] createLogWithRequest:log
+                                              handler:^(SCLog * _Nullable response, NSError * _Nullable error) {
+                                                  if(error){
+                                                      NSLog(@"%@",error.localizedDescription);
+                                                  }
+                                              }];
+    }
     [[SpeechSynthesizerModule module] stop];
     [[SpeechRecognitionModule module] start];
-    NSLog(@"Start ...\n");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,11 +110,17 @@ EmotionDelegate
 }
 
 -(void)interactWithMobileService:(NSString*) text{
+    if([text length] == 0){
+        [[SpeechRecognitionModule module] start];
+        return;
+    }
+    btn.enabled = NO;
     SCUserRequest * userRequest = [SCUserRequest new];
     [userRequest setProfileId:[SBUser user].profileId];
     [userRequest setText:text];
     [[MobileService service] getChatbotResponseWithRequest:userRequest
                                                    handler:^(SCChatbotResponse * _Nullable response, NSError * _Nullable error) {
+                                                       btn.enabled = YES;
                                                        if(error){
                                                            NSLog(@"%@\n", [error localizedDescription]);
                                                            [[SpeechRecognitionModule module] start];
@@ -106,18 +131,18 @@ EmotionDelegate
                                                    }];
 }
 
--(void)interactWithDialogflow:(NSString*) text{
-    AITextRequest * textRequest = [[DialogflowModule module] textRequest];
-    textRequest.query = text;
-    [textRequest setCompletionBlockSuccess:^(AIRequest *request, id response) {
-        [[SpeechSynthesizerModule module] startWithText:response[@"result"][@"fulfillment"][@"speech"]];
-        NSLog(@"%@\n", [response debugDescription]);
-    } failure:^(AIRequest *request, NSError *error) {
-        NSLog(@"%@\n", [error localizedDescription]);
-        [[SpeechRecognitionModule module] start];
-    }];
-    [[DialogflowModule module] enqueue:textRequest];
-}
+//-(void)interactWithDialogflow:(NSString*) text{
+//    AITextRequest * textRequest = [[DialogflowModule module] textRequest];
+//    textRequest.query = text;
+//    [textRequest setCompletionBlockSuccess:^(AIRequest *request, id response) {
+//        [[SpeechSynthesizerModule module] startWithText:response[@"result"][@"fulfillment"][@"speech"]];
+//        NSLog(@"%@\n", [response debugDescription]);
+//    } failure:^(AIRequest *request, NSError *error) {
+//        NSLog(@"%@\n", [error localizedDescription]);
+//        [[SpeechRecognitionModule module] start];
+//    }];
+//    [[DialogflowModule module] enqueue:textRequest];
+//}
 
 -(void)onSyncStop:(BOOL)hasError{
     [[SpeechRecognitionModule module] start];
