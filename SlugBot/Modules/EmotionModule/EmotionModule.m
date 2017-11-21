@@ -12,7 +12,6 @@
 #define IDLE_INTERVAL 100
 
 @implementation EmotionModule{
-    NSTimer * timer;
     double last_update;
     SCChatbotResponse_Emotion current_emotion;
     NSDictionary<NSNumber*, NSArray<NSString*>*>* emotion_images;
@@ -46,12 +45,6 @@
                            @(SCChatbotResponse_Emotion_Sad):@[@"sad"],
                            @(SCChatbotResponse_Emotion_Happy):@[@"happy"],
         };
-        WS(wSelf);
-        timer = [NSTimer scheduledTimerWithTimeInterval:ROUND_CHECK_INTERVAL repeats:YES block:^(NSTimer * _Nonnull timer) {
-            if(wSelf){
-                [wSelf updateEmtion];
-            }
-        }];
     }
     return self;
 }
@@ -67,12 +60,6 @@
 }
 
 -(void)updateEmtion{
-    if(current_emotion == _emotion){
-        if(_emotion!=SCChatbotResponse_Emotion_Sleep && [NSDate dateWithTimeIntervalSinceNow:0].timeIntervalSince1970 - last_update>IDLE_INTERVAL){
-            [self setEmotion:SCChatbotResponse_Emotion_Sleep];
-        }
-        return;
-    }
     current_emotion = _emotion;
     last_update = [NSDate dateWithTimeIntervalSinceNow:0].timeIntervalSince1970;
     if(self.delegate){

@@ -14,8 +14,8 @@
 #import "EmotionModule.h"
 
 @interface ChatbotViewController ()<
-    SpeechRecognizerDelegate,
-    SpeechSynthesizerDelegate,
+SpeechRecognizerDelegate,
+SpeechSynthesizerDelegate,
 EmotionDelegate
 >
 
@@ -24,13 +24,16 @@ EmotionDelegate
 @implementation ChatbotViewController{
     UIButton * btn;
     UIImageView* emotionView;
+    BOOL isExiting;
+    NSDate* lastSpeechTime;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    isExiting = NO;
     self.title = [NSString stringWithFormat:@"%@ - %@",LocalizedStr(@"ChatbotTitle"),[SBUser user].profileName];
     self.view.backgroundColor = [UIColor whiteColor];
-
+    
     emotionView = [UIImageView new];
     [self.view addSubview:emotionView];
     
@@ -42,7 +45,7 @@ EmotionDelegate
     [[SpeechRecognitionModule module] setDelegate:self];
     [[SpeechSynthesizerModule module] setDelegate:self];
     [[EmotionModule module] setDelegate:self];
-    [[EmotionModule module] setEmotion:SCChatbotResponse_Emotion_Normal];
+    [[EmotionModule module] setEmotion:SCChatbotResponse_Emotion_Sleep];
     
     
     btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -64,31 +67,46 @@ EmotionDelegate
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = NO;
+    [self exit];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self interactWithMobileService:@"你好!"];
+    [self interactWithMobileService:@"$start"];
+}
+
+-(void)exit{
+    isExiting = YES;
+    [[SpeechRecognitionModule module] stop];
+    [[SpeechSynthesizerModule module] stop];
 }
 
 -(void)hitBtn{
     if([SpeechRecognitionModule module].isListening){
+        [[SpeechRecognitionModule module] stop];
+        [self interactWithMobileService:@"$hit"];
         return;
     }
-    if([SpeechSynthesizerModule module].endPos>0){
-        SCLog* log = [SCLog new];
-        log.profileId = [SBUser user].profileId;
-        log.logType = SCLog_LogType_InterruptSpeech;
-        log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
-        [[MobileService service] createLogWithRequest:log
-                                              handler:^(SCLog * _Nullable response, NSError * _Nullable error) {
-                                                  if(error){
-                                                      NSLog(@"%@",error.localizedDescription);
-                                                  }
-                                              }];
+    
+    if([SpeechSynthesizerModule module].beginPos<20){
+        return;
     }
+    
+    SCLog* log = [SCLog new];
+    log.profileId = [SBUser user].profileId;
+    log.logType = SCLog_LogType_InterruptSpeech;
+    log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
+    
     [[SpeechSynthesizerModule module] stop];
     [[SpeechRecognitionModule module] start];
+    
+    [[MobileService service] createLogWithRequest:log
+                                          handler:^(SCLog * _Nullable response, NSError * _Nullable error) {
+                                              if(error){
+                                                  NSLog(@"%@",error.localizedDescription);
+                                              }
+                                          }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,28 +116,56 @@ EmotionDelegate
 
 
 -(void)onStart{
-//    [btn setTitle:@"Listening..." forState:UIControlStateNormal];
+    //    [btn setTitle:@"Listening..." forState:UIControlStateNormal];
     
     [[EmotionModule module] setEmotion:SCChatbotResponse_Emotion_Listening];
 }
 
 -(void)onEndWithResult:(NSString *)text{
-//    NSLog(@"%@\n",text);
-//    [btn setTitle:text forState:UIControlStateNormal];
+    if(isExiting) {
+        return;
+    }
+    //    NSLog(@"%@\n",text);
+    //    [btn setTitle:text forState:UIControlStateNormal];
+    if(text.length == 0){
+        [self noSpeech];
+        return;
+    }
     [self interactWithMobileService:text];
 }
 
+-(void)noSpeech{
+    if(lastSpeechTime!=nil && [NSDate date].timeIntervalSince1970 - lastSpeechTime.timeIntervalSince1970 > 30){
+        [self interactWithMobileService:@"$noSpeech{30}"];
+    }else{
+        [self interactWithMobileService:@""];
+    }
+}
+
 -(void)interactWithMobileService:(NSString*) text{
+    if(isExiting) {
+        return;
+    }
     if([text length] == 0){
         [[SpeechRecognitionModule module] start];
         return;
     }
+    lastSpeechTime = [NSDate date];
     btn.enabled = NO;
     SCUserRequest * userRequest = [SCUserRequest new];
     [userRequest setProfileId:[SBUser user].profileId];
     [userRequest setText:text];
+#ifdef DEBUG
+    NSDate * startDate = [NSDate date];
+#endif
     [[MobileService service] getChatbotResponseWithRequest:userRequest
                                                    handler:^(SCChatbotResponse * _Nullable response, NSError * _Nullable error) {
+#ifdef DEBUG
+                                                       NSLog(@"Response time: %.4f s\n", [NSDate date].timeIntervalSince1970 - startDate.timeIntervalSince1970);
+#endif
+                                                       if(isExiting) {
+                                                           return;
+                                                       }
                                                        btn.enabled = YES;
                                                        if(error){
                                                            NSLog(@"%@\n", [error localizedDescription]);
@@ -145,6 +191,9 @@ EmotionDelegate
 //}
 
 -(void)onSyncStop:(BOOL)hasError{
+    if(isExiting) {
+        return;
+    }
     [[SpeechRecognitionModule module] start];
 }
 
@@ -152,3 +201,4 @@ EmotionDelegate
     [emotionView setImage:image];
 }
 @end
+

@@ -16,6 +16,8 @@ AddProfileAlertActionOK = "好的";
 AddProfileAlertActionCancel = "取消";
 AddProfileAlertPlaceholder = "昵称";
 
+DefaultProfileName = "小小虫";
+
 AvatarListTitle = "选择一个头像";
 
 ChatbotTitle = "一只小虫";

@@ -20,6 +20,7 @@
     IFlySpeechRecognizer *iFlySpeechRecognizer;
     IFlyPcmRecorder *pcmRecorder;
     NSString* tmpResult;
+    BOOL stopCallingDelegate;
 }
 
 
@@ -75,11 +76,11 @@
     if (iFlySpeechRecognizer != nil) {
         
         //设置最长录音时间
-        [iFlySpeechRecognizer setParameter:@"3000"  forKey:[IFlySpeechConstant SPEECH_TIMEOUT]];
+        [iFlySpeechRecognizer setParameter:@"-1"  forKey:[IFlySpeechConstant SPEECH_TIMEOUT]];
         //设置后端点
         [iFlySpeechRecognizer setParameter:@"2000" forKey:[IFlySpeechConstant VAD_EOS]];
         //设置前端点
-        [iFlySpeechRecognizer setParameter:@"5000" forKey:[IFlySpeechConstant VAD_BOS]];
+        [iFlySpeechRecognizer setParameter:@"30000" forKey:[IFlySpeechConstant VAD_BOS]];
         //网络等待时间
         [iFlySpeechRecognizer setParameter:@"20000" forKey:[IFlySpeechConstant NET_TIMEOUT]];
         
@@ -92,7 +93,7 @@
         [iFlySpeechRecognizer setParameter:@"mandarin" forKey:[IFlySpeechConstant ACCENT]];
         
         //设置是否返回标点符号
-        [iFlySpeechRecognizer setParameter:@"1" forKey:[IFlySpeechConstant ASR_PTT]];
+        [iFlySpeechRecognizer setParameter:[IFlySpeechConstant ASR_PTT_HAVEDOT] forKey:[IFlySpeechConstant ASR_PTT]];
         
     }
     
@@ -111,6 +112,7 @@
 }
 
 -(void)start{
+    stopCallingDelegate = NO;
     [self initRecognizer];
     
     [iFlySpeechRecognizer setParameter:@"json" forKey:[IFlySpeechConstant RESULT_TYPE]];
@@ -128,7 +130,7 @@
         //启动录音器服务
         BOOL ret = [pcmRecorder start];
         NSLog(@"%s[OUT],Success,Recorder ret=%d",__func__,ret);
-        if(self.delegate){
+        if(!stopCallingDelegate && self.delegate){
             [self.delegate onStart];
         }
     }
@@ -140,9 +142,9 @@
 }
 
 -(void)stop{
+    stopCallingDelegate = YES;
     [iFlySpeechRecognizer stopListening];
     [pcmRecorder stop];
-    [self.delegate onEndWithResult:@""];
 }
 
 -(BOOL)isListening{
@@ -171,7 +173,7 @@
         NSLog(@"%@\n",resultFromJson);
         tmpResult = [tmpResult stringByAppendingString:resultFromJson];
     }
-    if(self.delegate != nil && isLast){
+    if(!stopCallingDelegate && self.delegate != nil && isLast){
         [self.delegate onEndWithResult:tmpResult];
     }
 }
@@ -186,14 +188,12 @@
     NSData *audioBuffer = [NSData dataWithBytes:buffer length:size];
     
     int ret = [iFlySpeechRecognizer writeAudio:audioBuffer];
-    if (!ret)
-    {
-        [iFlySpeechRecognizer stopListening];
-        [pcmRecorder stop];
-        if(self.delegate){
-            [self.delegate onEndWithResult:@""];
-        }
-    }
+//    if (!ret)
+//    {
+//        [iFlySpeechRecognizer stopListening];
+//        [pcmRecorder stop];
+//
+//    }
 }
 
 -(void)onIFlyRecorderError:(IFlyPcmRecorder *)recoder theError:(int)error{

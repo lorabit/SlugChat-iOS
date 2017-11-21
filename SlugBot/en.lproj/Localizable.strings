@@ -17,6 +17,8 @@ AddProfileAlertActionOK = "OK";
 AddProfileAlertActionCancel = "Cancel";
 AddProfileAlertPlaceholder = "Nickname";
 
+DefaultProfileName = "Micro Slug";
+
 AvatarListTitle = "Pick An Avatar";
 
 ChatbotTitle = "SlugChat";

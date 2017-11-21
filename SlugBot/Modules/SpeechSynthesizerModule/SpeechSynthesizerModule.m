@@ -54,6 +54,9 @@
 }
 
 -(void)stop{
+    _progress = 0;
+    _beginPos = 0;
+    _endPos = 0;
     if(iFlySpeechSynthesizer){
         [iFlySpeechSynthesizer stopSpeaking];
     }

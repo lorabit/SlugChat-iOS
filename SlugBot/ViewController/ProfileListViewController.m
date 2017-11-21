@@ -128,10 +128,16 @@ NSString* profileCellIdentifier = @"cell";
          }
          profiles = [response profilesArray];
          if(profiles.count == 0){
-             [self hitAddProfileButton];
+             [self createProfileWithName:LocalizedStr(@"DefaultProfileName")];
          }
          [collectionView reloadData];
      }];
+}
+
+-(void)createProfileWithName:(NSString*)name{
+    AvatarListViewController * avatarListViewController = [AvatarListViewController new];
+    avatarListViewController.name = name;
+    [self.navigationController pushViewController:avatarListViewController animated:YES];
 }
 
 -(void)hitAddProfileButton{
@@ -149,9 +155,7 @@ NSString* profileCellIdentifier = @"cell";
                            handler:^(UIAlertAction * _Nonnull action) {
                                UITextField * nameTextField = [alert textFields][0];
                                if(nameTextField.text.length>0){
-                                   AvatarListViewController * avatarListViewController = [AvatarListViewController new];
-                                   avatarListViewController.name = nameTextField.text;
-                                   [wSelf.navigationController pushViewController:avatarListViewController animated:YES];
+                                   [wSelf createProfileWithName:nameTextField.text];
                                }
                            }];
     UIAlertAction * cancelAction =
