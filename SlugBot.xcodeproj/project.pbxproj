@@ -638,7 +638,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SlugBot/Modules/SpeechSynthesizerModule/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugChat;
+				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugChat.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -665,7 +665,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SlugBot/Modules/SpeechSynthesizerModule/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugChat;
+				PRODUCT_BUNDLE_IDENTIFIER = UCSC.SlugChat.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -140,8 +140,8 @@ NSString* profileCellIdentifier = @"cell";
     [self.navigationController pushViewController:avatarListViewController animated:YES];
 }
 
--(void)hitAddProfileButton{
- UIAlertController* alert =
+-(void)addProfile{
+    UIAlertController* alert =
     [UIAlertController alertControllerWithTitle:LocalizedStr(@"AddProfileAlertTitle")
                                         message:LocalizedStr(@"AddProfileAlertMessage")
                                  preferredStyle:UIAlertControllerStyleAlert];
@@ -165,17 +165,24 @@ NSString* profileCellIdentifier = @"cell";
     [alert addAction:okAction];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-//    SCProfile* profile = [SCProfile new];
-//    [profile setClientId:9];
-//    [profile setName:@"test profile"];
-//    [profile setAvatar:1];
-//    [[MobileService service] createProfileWithRequest:profile
-//                                              handler:^(SCProfile * _Nullable response, NSError * _Nullable error) {
-//                                                  NSLog(@"Profile created: %d\n", response.profileId);
-//                                                  [self reloadData];
-//                                              }];
-    
+}
+
+-(void)hitAddProfileButton{
+    if([SBUser user].clientId > 0) {
+        [self addProfile];
+        return;
+    }
+    SCRegisterClientRequest * request = [SCRegisterClientRequest new];
+    request.platform = SCPlatform_Ios;
+    [[MobileService service] registerClientWithRequest:request handler:^(SCRegisterClientResponse * _Nullable response, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Register Client: %@", error.localizedDescription);
+            [self showNetworkAlert];
+        }else{
+            [SBUser user].clientId = response.clientId;
+            [self addProfile];
+        }
+    }];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

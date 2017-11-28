@@ -76,6 +76,12 @@ EmotionDelegate
 }
 
 -(void)exit{
+    if([SpeechSynthesizerModule module].endPos>0){
+        SCLog* log = [SCLog new];
+        log.profileId = [SBUser user].profileId;
+        log.logType = SCLog_LogType_InterruptSpeech;
+        log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
+    }
     isExiting = YES;
     [[SpeechRecognitionModule module] stop];
     [[SpeechSynthesizerModule module] stop];
