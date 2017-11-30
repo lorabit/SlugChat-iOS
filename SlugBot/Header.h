@@ -21,7 +21,7 @@
 #import "UIColor+Util.h"
 #import "SBUser.h"
 
-
+#define ExisitingAppNotificationName @"ExisitingAppNotificationName"
 #define MainScreenBounds    [UIScreen mainScreen].bounds
 #define WS(wSelf)           __weak typeof(self) wSelf = self
 #define SS(sSelf)           __strong typeof(wSelf) sSelf = wSelf

@@ -63,6 +63,11 @@ AudioPlayerModuleDelegate
         make.edges.equalTo(emotionView);
     }];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(exit)
+                                                 name:ExisitingAppNotificationName
+                                               object:nil];
+    
     
 }
 
@@ -75,6 +80,9 @@ AudioPlayerModuleDelegate
     [super viewWillDisappear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     [self exit];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:ExisitingAppNotificationName
+                                                  object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -83,6 +91,9 @@ AudioPlayerModuleDelegate
 }
 
 -(void)generateStopLog{
+    if(playingResponse == nil){
+        return;
+    }
     SCLog* log = [SCLog new];
     log.profileId = [SBUser user].profileId;
     if(playingResponse.responseType == SCChatbotResponse_ResponseType_Audio){
@@ -165,7 +176,7 @@ AudioPlayerModuleDelegate
 
 -(void)onStart{
     //    [btn setTitle:@"Listening..." forState:UIControlStateNormal];
-    
+    playingResponse = nil;
     [[EmotionModule module] setEmotion:SCChatbotResponse_Emotion_Listening];
 }
 
