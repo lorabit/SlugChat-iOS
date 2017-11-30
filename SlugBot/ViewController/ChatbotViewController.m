@@ -119,13 +119,18 @@ AudioPlayerModuleDelegate
 }
 
 -(void)hitBtn{
+    if([AudioPlayerModule module].isPlaying){
+        [self generateStopLog];
+        [[AudioPlayerModule module] stop];
+        return;
+    }
     if([SpeechRecognitionModule module].isListening){
         [[SpeechRecognitionModule module] stop];
         [self interactWithMobileService:@"$hit"];
         return;
     }
     
-    if([SpeechSynthesizerModule module].beginPos<20){
+    if([SpeechSynthesizerModule module].endPos>0 && [SpeechSynthesizerModule module].beginPos<20){
         return;
     }
     

@@ -16,7 +16,6 @@
 @end
 
 @implementation AudioPlayerModule{
-    AVAudioPlayer * audioPlayer;
     AVPlayer * player;
     AVPlayerItem * playerItem;
 }
@@ -40,41 +39,33 @@
 -(instancetype)init{
     self = [super init];
     if(self){
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(stop)
+                                                     name:AVPlayerItemDidPlayToEndTimeNotification
+                                                   object:nil];
     }
     return self;
 }
 
 -(void)playUrl:(NSString *)url{
-    NSError * error;
-//    playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:url]];
-    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:url]
-                                                         error:&error];
-    if(error){
-        NSLog(@"%@", error.localizedDescription);
-        if(self.delegate){
-            [self.delegate onStopPlayingAudio];
-        }
-    }
-    audioPlayer.delegate = self;
-    if([audioPlayer prepareToPlay]){
-        [audioPlayer play];
-    }else{
-        if(self.delegate){
-            [self.delegate onStopPlayingAudio];
-        }
-    }
+    playerItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:url]];
+    player = [AVPlayer playerWithPlayerItem:playerItem];
+    [player play];
 }
 
 -(void)stop{
-    [audioPlayer stop];
+    [player seekToTime:CMTimeMake(0, 1)];
+    [player pause];
+    if(self.delegate){
+        [self.delegate onStopPlayingAudio];
+    }
 }
 
 -(BOOL)isPlaying{
-    if(!audioPlayer){
+    if(!player){
         return NO;
     }
-    return audioPlayer.isPlaying;
+    return player.rate>0;
 }
 
 -(float)progress{
@@ -88,21 +79,16 @@
     if(!self.isPlaying){
         return 0;
     }
-    return audioPlayer.duration;
+    return CMTimeGetSeconds(playerItem.duration);
 }
 
 -(float)currentTime{
     if(!self.isPlaying){
         return 0;
     }
-    return audioPlayer.currentTime;
+    return CMTimeGetSeconds(playerItem.currentTime);
 }
 
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    if(self.delegate){
-        [self.delegate onStopPlayingAudio];
-    }
-}
 
 
 @end
