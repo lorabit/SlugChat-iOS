@@ -12,11 +12,14 @@
 #import "SpeechSynthesizerModule.h"
 #import "MobileService.h"
 #import "EmotionModule.h"
+#import "AudioPlayerModule.h"
+
 
 @interface ChatbotViewController ()<
 SpeechRecognizerDelegate,
 SpeechSynthesizerDelegate,
-EmotionDelegate
+EmotionDelegate,
+AudioPlayerModuleDelegate
 >
 
 @end
@@ -26,6 +29,9 @@ EmotionDelegate
     UIImageView* emotionView;
     BOOL isExiting;
     NSDate* lastSpeechTime;
+    SCChatbotResponse * playingResponse;
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -44,6 +50,7 @@ EmotionDelegate
     
     [[SpeechRecognitionModule module] setDelegate:self];
     [[SpeechSynthesizerModule module] setDelegate:self];
+    [[AudioPlayerModule module] setDelegate:self];
     [[EmotionModule module] setDelegate:self];
     [[EmotionModule module] setEmotion:SCChatbotResponse_Emotion_Sleep];
     
@@ -75,14 +82,38 @@ EmotionDelegate
     [self interactWithMobileService:@"$start"];
 }
 
--(void)exit{
-    if([SpeechSynthesizerModule module].endPos>0){
-        SCLog* log = [SCLog new];
-        log.profileId = [SBUser user].profileId;
-        log.logType = SCLog_LogType_InterruptSpeech;
-        log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
+-(void)generateStopLog{
+    SCLog* log = [SCLog new];
+    log.profileId = [SBUser user].profileId;
+    if(playingResponse.responseType == SCChatbotResponse_ResponseType_Audio){
+        if([AudioPlayerModule module].isPlaying){
+            log.logType = SCLog_LogType_InterruptAudio;
+            log.content = [NSString stringWithFormat:@"%.2f,%.2f,%.2f,%lld",
+                           [AudioPlayerModule module].progress,
+                           [AudioPlayerModule module].currentTime,
+                           [AudioPlayerModule module].duration,
+                           playingResponse.logId];
+        }
+    }else{
+        if([SpeechSynthesizerModule module].endPos>0){
+            log.logType = SCLog_LogType_InterruptSpeech;
+            log.content = [NSString stringWithFormat:@"%d,%d,%d,%lld",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos,playingResponse.logId];
+        }
     }
+    if(log.content!=NULL && log.content.length>0){
+        [[MobileService service] createLogWithRequest:log
+                                              handler:^(SCLog * _Nullable response, NSError * _Nullable error) {
+                                                  if(error){
+                                                      NSLog(@"%@",error.localizedDescription);
+                                                  }
+                                              }];
+    }
+}
+
+-(void)exit{
+    [self generateStopLog];
     isExiting = YES;
+    [[AudioPlayerModule module] stop];
     [[SpeechRecognitionModule module] stop];
     [[SpeechSynthesizerModule module] stop];
 }
@@ -98,21 +129,27 @@ EmotionDelegate
         return;
     }
     
-    SCLog* log = [SCLog new];
-    log.profileId = [SBUser user].profileId;
-    log.logType = SCLog_LogType_InterruptSpeech;
-    log.content = [NSString stringWithFormat:@"%d,%d,%d",[SpeechSynthesizerModule module].progress,[SpeechSynthesizerModule module].beginPos,[SpeechSynthesizerModule module].endPos];
+    
+    [self generateStopLog];
     
     [[SpeechSynthesizerModule module] stop];
     [[SpeechRecognitionModule module] start];
     
-    [[MobileService service] createLogWithRequest:log
-                                          handler:^(SCLog * _Nullable response, NSError * _Nullable error) {
-                                              if(error){
-                                                  NSLog(@"%@",error.localizedDescription);
-                                              }
-                                          }];
+  
     
+}
+
+-(void)playResponse:(SCChatbotResponse*) response{
+    playingResponse = response;
+    [[EmotionModule module] setEmotion:response.emotion];
+    switch (response.responseType) {
+        case SCChatbotResponse_ResponseType_Audio:
+            [[AudioPlayerModule module] playUrl:response.text];
+            break;
+        default:
+            [[SpeechSynthesizerModule module] startWithText:response.text];
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -161,6 +198,10 @@ EmotionDelegate
     SCUserRequest * userRequest = [SCUserRequest new];
     [userRequest setProfileId:[SBUser user].profileId];
     [userRequest setText:text];
+    SCMetaData * metaData = [SCMetaData new];
+    metaData.version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    [userRequest setMetaData:metaData];
+    
 #ifdef DEBUG
     NSDate * startDate = [NSDate date];
 #endif
@@ -178,8 +219,7 @@ EmotionDelegate
                                                            [[SpeechRecognitionModule module] start];
                                                            return;
                                                        }
-                                                       [[SpeechSynthesizerModule module] startWithText:response.text];
-                                                       [[EmotionModule module] setEmotion:response.emotion];
+                                                       [self playResponse:response];
                                                    }];
 }
 
@@ -197,6 +237,13 @@ EmotionDelegate
 //}
 
 -(void)onSyncStop:(BOOL)hasError{
+    if(isExiting) {
+        return;
+    }
+    [[SpeechRecognitionModule module] start];
+}
+
+-(void)onStopPlayingAudio{
     if(isExiting) {
         return;
     }

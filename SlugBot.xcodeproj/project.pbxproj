@@ -23,6 +23,7 @@
 		4AE272571FAECF29009A189D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AE272591FAECF29009A189D /* Localizable.strings */; };
 		4AE2725D1FAEE558009A189D /* AvatarListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725C1FAEE558009A189D /* AvatarListViewController.m */; };
 		4AE272601FAEE5A3009A189D /* AvatarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */; };
+		4AEF26A31FCFFF380033BA58 /* AudioPlayerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF26A21FCFFF380033BA58 /* AudioPlayerModule.m */; };
 		4AF8F4A51FAF020600494D4A /* SBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4A41FAF020600494D4A /* SBUser.m */; };
 		4AF8F4A91FAFEEE500494D4A /* AppDelegate+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8F4A81FAFEEE500494D4A /* AppDelegate+Notification.m */; };
 		4AF8F4AB1FAFF4CD00494D4A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF8F4AA1FAFF4CD00494D4A /* UserNotifications.framework */; };
@@ -81,6 +82,9 @@
 		4AE2725C1FAEE558009A189D /* AvatarListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarListViewController.m; sourceTree = "<group>"; };
 		4AE2725E1FAEE5A3009A189D /* AvatarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarCollectionViewCell.h; sourceTree = "<group>"; };
 		4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarCollectionViewCell.m; sourceTree = "<group>"; };
+		4AEF26A11FCFFF380033BA58 /* AudioPlayerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerModule.h; sourceTree = "<group>"; };
+		4AEF26A21FCFFF380033BA58 /* AudioPlayerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerModule.m; sourceTree = "<group>"; };
+		4AEF26A41FD0055A0033BA58 /* AudioPlayerModuleDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayerModuleDelegate.h; sourceTree = "<group>"; };
 		4AF8F4A31FAF020600494D4A /* SBUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBUser.h; sourceTree = "<group>"; };
 		4AF8F4A41FAF020600494D4A /* SBUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBUser.m; sourceTree = "<group>"; };
 		4AF8F4A61FAFEE9A00494D4A /* SlugBot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SlugBot.entitlements; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		4A70F9501FABEB78000D2720 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4AEF26A01FCFFF210033BA58 /* AudioPlayerModule */,
 				4AC2EC7B1FB7FE1000F2F8B9 /* EmotionModule */,
 				4AF8F4D81FB517A000494D4A /* SpeechSynthesizerModule */,
 				4AF8F4B81FB1319200494D4A /* SpeechRecognitionModule */,
@@ -273,6 +278,16 @@
 				4AE2725F1FAEE5A3009A189D /* AvatarCollectionViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4AEF26A01FCFFF210033BA58 /* AudioPlayerModule */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF26A11FCFFF380033BA58 /* AudioPlayerModule.h */,
+				4AEF26A21FCFFF380033BA58 /* AudioPlayerModule.m */,
+				4AEF26A41FD0055A0033BA58 /* AudioPlayerModuleDelegate.h */,
+			);
+			path = AudioPlayerModule;
 			sourceTree = "<group>";
 		};
 		4AF8F4B21FB0040900494D4A /* DialogflowModule */ = {
@@ -483,6 +498,7 @@
 				4AF8F4B11FB0028200494D4A /* ChatbotViewController.m in Sources */,
 				4A70F9351FA401DD000D2720 /* main.m in Sources */,
 				4A7A101B1FBCD6C700B1127E /* EmotionModule.m in Sources */,
+				4AEF26A31FCFFF380033BA58 /* AudioPlayerModule.m in Sources */,
 				4A70F95B1FABECBF000D2720 /* MobileService.m in Sources */,
 				4A70F93E1FA406FE000D2720 /* SBTool.m in Sources */,
 				4A70F9541FABEB9E000D2720 /* SCModuleManager.m in Sources */,
